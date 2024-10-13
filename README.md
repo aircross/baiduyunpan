@@ -1,6 +1,7 @@
 ## 百度云盘Docker版
 
 适用范围：基于百度云盘linux版开发，支持centos、debian、ubuntu、树莓派，也支持Windows、mac等系统
+支持的CPU架构：linux/386,linux/amd64,linux/arm/v7,linux/arm/v8,linux/arm64
 
 ### 特点：
 
@@ -11,7 +12,7 @@
 ### 运行：
 
 ```
-docker run -itd -p 5299:5299 --name baidu -v /opt/BDdownload:/root/Downloads baiyuetribe/baiduyunpan
+docker run -itd -p 5299:5299 --name baidu -v /opt/BDdownload:/root/Downloads aircross/baiduyunpan
 ```
 
 说明：
