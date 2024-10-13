@@ -15,6 +15,12 @@ jobs:
     steps:
       - name: Check out the code
         uses: actions/checkout@v4
+
+      - name: Init Env
+        run: |
+          sudo timedatectl set-timezone Asia/Shanghai
+          sudo apt-get install tree
+          sudo mkdir -p ./workdir
         
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
