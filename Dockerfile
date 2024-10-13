@@ -19,7 +19,7 @@ RUN apk update \
     && apk --no-cache add glibc-2.35-r1.apk
 
 RUN echo $TARGETARCH
-
+COPY . .
 RUN ./DockerInit.sh "$TARGETARCH"
 
 RUN apk del wget tzdata \
