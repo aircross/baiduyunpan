@@ -20,6 +20,7 @@ RUN apk update \
 
 RUN echo $TARGETARCH
 COPY . .
+RUN chmod +x ./DockerInit.sh
 RUN ./DockerInit.sh "$TARGETARCH"
 
 RUN apk del wget tzdata \
