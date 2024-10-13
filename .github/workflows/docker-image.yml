@@ -54,12 +54,12 @@ jobs:
 
 
       
-      - name: Repo Tag
-        working-directory: ./workdir
-        id: tag
-        run: |
-          echo "repo_tag=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_OUTPUT
-          echo "release_tag=$(date +"%Y.%m.%d-%H%M%S")" >> $GITHUB_OUTPUT >> $GITHUB_OUTPUT
+      # - name: Repo Tag
+      #   working-directory: ./workdir
+      #   id: tag
+      #   run: |
+      #     echo "repo_tag=$(git describe --tags `git rev-list --tags --max-count=1`)" >> $GITHUB_OUTPUT
+      #     echo "release_tag=$(date +"%Y.%m.%d-%H%M%S")" >> $GITHUB_OUTPUT >> $GITHUB_OUTPUT
 
       
       # - name: Build and push
