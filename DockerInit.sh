@@ -4,7 +4,7 @@ case $1 in
         ARCH="amd64"
         FNAME="amd64"
         ;;
-    i386)
+    i386 | 386)
         ARCH="386"
         FNAME="i386"
         ;;
