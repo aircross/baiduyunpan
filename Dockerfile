@@ -18,6 +18,8 @@ RUN apk update \
     && wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.35-r1/glibc-2.35-r1.apk \
     && apk --no-cache add glibc-2.35-r1.apk
 
+RUN echo $TARGETARCH
+
 RUN ./DockerInit.sh "$TARGETARCH"
 
 RUN apk del wget tzdata \
