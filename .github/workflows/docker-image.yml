@@ -79,7 +79,6 @@ jobs:
           platforms: ${{ steps.prepare.outputs.docker_platforms }}
           tags: | 
             ${{ steps.prepare.outputs.docker_image }}:latest
-            # ${{ steps.prepare.outputs.docker_image }}:${{ steps.tag.outputs.repo_tag }}
 
       # - name: Build and push docker image
       #   run: |
