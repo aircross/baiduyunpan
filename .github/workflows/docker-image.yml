@@ -40,12 +40,16 @@ jobs:
           fi
           # echo ::set-output name=docker_platforms::linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           # echo ::set-output name=docker_platforms::linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm/v8,linux/arm64
+          # echo ::set-output name=docker_platforms::linux/amd64
           echo ::set-output name=docker_platforms::linux/386,linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm/v8,linux/arm64
           echo ::set-output name=docker_image::${{ secrets.DOCKER_USERNAME }}/baiduyunpan
 
-      - name: Build and push
-        uses: docker/build-push-action@v6
-        with:
-          platforms: ${{ steps.prepare.outputs.docker_platforms }}
-          push: true
-          tags: "${{ steps.prepare.outputs.docker_image }}:latest"
+          # ${{ steps.prepare.outputs.docker_platforms }}
+      - name: Build and push docker image
+        run: |
+          docker buildx build --platform ${{ steps.prepare.outputs.docker_platforms }} \
+          --output "type=image,push=true" \
+          --tag "${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }}" \
+          --tag "${{ steps.prepare.outputs.docker_image }}:latest" \
+          --build-arg REF=${{ steps.prepare.outputs.ref }} \
+          --file Dockerfile .
