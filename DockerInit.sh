@@ -26,8 +26,8 @@ case $1 in
         ;;
 esac
 mkdir -p /BaiduPCS
-
-wget "https://github.com/masx200/baidupcs-web/releases/download/3.7.3/BaiduPCS-Go-3.7.3-linux-${ARCH}.zip"
+# https://github.com/masx200/baidupcs-web/releases/download/3.7.3/BaiduPCS-Go-v3.7.3-linux-amd64.zip
+wget "https://github.com/masx200/baidupcs-web/releases/download/3.7.3/BaiduPCS-Go-v3.7.3-linux-${ARCH}.zip"
 unzip "BaiduPCS-Go-3.7.3-linux--${ARCH}.zip"
 mv "/BaiduPCS-Go-3.7.3-linux-${ARCH}/BaiduPCS-Go" /BaiduPCS
 rm -rf "BaiduPCS-Go-3.7.3-linux-${ARCH}" "BaiduPCS-Go-3.7.3-linux-${ARCH}.zip"
