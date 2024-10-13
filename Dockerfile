@@ -1,5 +1,5 @@
 #本镜像基于最新版alpine+glibc+BaiduPCSweb
-FROM alpine:edge
+FROM alpine
 ARG TARGETARCH
 
 LABEL MAINTAINER="John"
