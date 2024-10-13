@@ -73,7 +73,7 @@ jobs:
         id: docker
         uses: docker/build-push-action@v5
         with:
-          context: ./workdir
+          context: ./
           push: true
           file: ''
           platforms: ${{ steps.prepare.outputs.docker_platforms }}
